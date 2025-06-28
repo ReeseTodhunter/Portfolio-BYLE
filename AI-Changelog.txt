@@ -1,0 +1,110 @@
+version 23w01a (23 = 2023, w01 = week 1 (week one starts at 19/01/23, a = first update of the week)
+- AI-Changelog created to track ai development
+- Added Environmental Query system (EQS), to allow ai's to obtain 
+relevent game data to perform their behaviours. Also supports
+pathfinding.
+- Added Goal oriented behvaiours, although not planned to be used.
+- Added Behaviour Trees, which will be the main ai behavioural
+solution.
+- Added simple character controller
+- Added a EQS Debugger to visualise the system and help other devs
+understand what it does
+- Added some simple ai animations, although not planned to be used.
+- Added temporary player model and test map, although not planned
+to be used
+- Added AI Pathfinding utilising the EQS. The pathfinding solution
+is Dijkstra pathfinding.
+- Added a simple melee-ai that chases the player and attempts to melee
+attack them.
+- Added a more complex ranged ai that pathfinds to optimal locations
+and shoots at the player
+
+
+version 23w02a
+-Work begins on the "Pouncer" Ai.
+-Work begins on a proper ai design doc
+-Basic Pouncer AI complete, will hide from the player until its 
+confident enough then will "pounce" the player, before running away
+again
+-Basic Bombadier AI complete, will attempt to keep distance from
+the player, firing arcing grenades / artillery like projectiles.
+-Neat camera drift effect added. The camera will try and move between
+the player and the mouse position, meaning that the camera slightly
+moves to follow the mouse, which creates a cool feeling.
+-Added some fun little arms to the player, wont stay in the project 
+but adds a little flavour in the mean time
+-Added short descriptions / summaries to all scripts.
+-Added a quick signature to all code that is made by me(Tom :p)
+
+
+==Version 23w02b==
+
+New Content:
+-AI Design doc started at https://docs.google.com/document/d/1xT74x9bICieZsWC87BQR4z7pn51lc6xaj8d3eyfFrmk/edit?usp=sharing
+-Basic Stalker AI complete, will hold back at long range and
+snipe the player. Will attempt to stay far away from the player.
+Will periodically teleport to a new position
+-Basic AI Spawner generated. Can take as many AI prefabs as desired,
+as well as the count for how many to spawn. Can control the bounds 
+of the spawning area.
+
+Changes : 
+-Updated movement behaviours to update pathfinding in real time,
+allowing for more realisitic movement
+-Added little eyes to each AI enemy, as well as tweaked their sizes to give them a bit more character 
+
+Known Bugs : 
+-Pouncers can pounce through objects and out of the map boundry
+-Some occasional pathfinding failures leading to error throws
+
+===============
+
+==Version 23w03a==
+
+New Content:
+- Enemies have new programmer models (look slightly less 
+jank)
+- Laser pointers (shader included)
+- New Behaviours ;
+	- Charge shots
+	- 3 new movement behaviours
+- 
+Changes:
+-Under the hood overhaul of the player / ai's (seb and Tom)
+- Behaviour tree replaced with a binary-behaviour tree
+system. This splits the tree into two new trees; The
+action tree and the movement tree. The ai's can now 
+perform actions and move independently, allowing for
+emergent behaviours like running and shooting that 
+wasn't possible before.
+- Sniper AI and Basic shooter AI reworked under new AI
+system
+Known bugs : 
+- Pathfinding doesn't always suceed, shouldn't pump out errors
+from now on
+
+===============
+
+==Version 23w04a==
+New Content:
+- Slime Boss, complete with a moveset and a simple set piece
+to spawn the boss, including :
+	- The boss itself, with a slime shader 
+	- An intro animation using camera effects, shaders
+	etc
+	- An overhaul of the teleport action, which a very
+	telegraphed and cool looking animation
+- New AI attacks
+	- Spread shot, fires a spread of projectiles akin to
+	a shotgun. Can increase the spread to allow for a 360
+	projectile circle.
+	- Charge attack. Reworked pounce attack from older
+	versions
+Changes: 
+- Enemies now recieve and deal damage appropriatly
+- Charge attack is now fixed, and will no longer charge
+through solid objects
+Known bugs:
+
+===============
+
